@@ -1,0 +1,19 @@
+{
+    "name": "binafy/laravel-stub",
+    "description": "Generate stub files easy",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Binafy\\LaravelStub\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "miladev-ent",
+            "email": "98118400+milwad-dev@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
