@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static from(string $path): static
+ * @method static to(string $to): static
  *
  * @see \Binafy\LaravelStub\LaravelStub
  */
