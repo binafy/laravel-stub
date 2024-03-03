@@ -21,7 +21,14 @@ class LaravelStub
     protected string $to;
 
     /**
-     * Get stub path.
+     * The new name of stub file.
+     *
+     * @var string
+     */
+    protected string $name;
+
+    /**
+     * Set stub path.
      */
     public function from(string $path): static
     {
@@ -31,11 +38,21 @@ class LaravelStub
     }
 
     /**
-     * Get stub destination path.
+     * Set stub destination path.
      */
     public function to(string $to): static
     {
         $this->to = $to;
+
+        return $this;
+    }
+
+    /**
+     * Set new stub name.
+     */
+    public function name(string $name): static
+    {
+        $this->name = $name;
 
         return $this;
     }
