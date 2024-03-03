@@ -2,6 +2,8 @@
 
 namespace Binafy\LaravelStub;
 
+use Illuminate\Support\Facades\File;
+
 class LaravelStub
 {
     /**
@@ -36,5 +38,25 @@ class LaravelStub
         $this->to = $to;
 
         return $this;
+    }
+
+    /**
+     * Generate stub file.
+     */
+    public function generate(): bool
+    {
+        // Check path is valid
+
+        // Check destination path is valid
+
+        // Replace variables
+
+        // Move file
+        File::move($this->from, $this->to);
+
+        // Put content and write on file
+        File::put($this->to, 'milwad');
+
+        return true;
     }
 }

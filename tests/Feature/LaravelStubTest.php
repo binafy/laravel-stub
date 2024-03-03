@@ -1,10 +1,15 @@
 <?php
 
 use Binafy\LaravelStub\Facades\LaravelStub;
-use Illuminate\Http\UploadedFile;
 
 test('generate stub successfully with all options', function () {
-    $stub = UploadedFile::fake()->create('test.stub');
+    $stub = __DIR__ . '/test.stub';
 
-    LaravelStub::from($stub->path());
+    $generate = LaravelStub::from($stub)
+        ->to(__DIR__ . '/../App')
+        ->name('new-test.stub')
+        ->generate();
+
+    \PHPUnit\Framework\assertTrue($generate);
+    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
 });
