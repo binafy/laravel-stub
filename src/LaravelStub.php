@@ -69,10 +69,12 @@ class LaravelStub
         // Replace variables
 
         // Move file
-        File::move($this->from, $this->to);
+        $path = "{$this->to}/{$this->name}";
+
+        File::move($this->from, $path);
 
         // Put content and write on file
-        File::put($this->to, 'milwad');
+        File::put($path, '');
 
         return true;
     }

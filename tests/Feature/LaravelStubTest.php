@@ -11,5 +11,6 @@ test('generate stub successfully with all options', function () {
         ->generate();
 
     \PHPUnit\Framework\assertTrue($generate);
-    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
+    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/new-test.stub');
+    \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/test.stub');
 });
