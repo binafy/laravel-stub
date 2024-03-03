@@ -4,6 +4,11 @@ namespace Binafy\LaravelStub\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method static from(string $path): static
+ *
+ * @see \Binafy\LaravelStub\LaravelStub
+ */
 class LaravelStub extends Facade
 {
     /**
