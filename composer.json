@@ -3,6 +3,10 @@
     "description": "Generate stub files easy",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^9.0|^10.0"
+    },
     "autoload": {
         "psr-4": {
             "Binafy\\LaravelStub\\": "src/"
@@ -14,6 +18,5 @@
             "email": "98118400+milwad-dev@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "dev"
 }
