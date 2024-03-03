@@ -2,9 +2,18 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use Binafy\LaravelStub\Providers\LaravelStubServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    //
+    /**
+     * Get package providers.
+     */
+    protected function getPackageProviders($app): array
+    {
+        return [
+            LaravelStubServiceProvider::class,
+        ];
+    }
 }
