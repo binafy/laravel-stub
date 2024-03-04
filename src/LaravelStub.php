@@ -32,7 +32,7 @@ class LaravelStub
      *
      * @var array
      */
-    protected array $replacers;
+    protected array $replaces;
 
     /**
      * Set stub path.
@@ -69,7 +69,19 @@ class LaravelStub
      */
     public function replace(string $key, mixed $value): static
     {
-        $this->replacers[$key] = $value;
+        $this->replaces[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set new replace with key and value.
+     */
+    public function replaces(array $replaces): static
+    {
+        foreach ($replaces as $key => $value) {
+            $this->replaces[$key] = $value;
+        }
 
         return $this;
     }
@@ -91,8 +103,8 @@ class LaravelStub
 
         // Replace variables
         $content = File::get($this->from);
-        foreach ($this->replacers as $search => $value) {
-            str_replace("{{ $search }}", $value, $content);
+        foreach ($this->replaces as $search => $value) {
+            $content = str_replace("{{ $search }}", $value, $content);
         }
 
         // Move file

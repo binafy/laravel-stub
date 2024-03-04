@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static to(string $to): static
  * @method static name(string $name): static
  * @method static replace(string $key, mixed $value): static
+ * @method static replaces(array $replaces): static
  * @method static generate(): bool
  *
  * @see \Binafy\LaravelStub\LaravelStub
