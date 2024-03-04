@@ -28,6 +28,13 @@ class LaravelStub
     protected string $name;
 
     /**
+     * Array of search and value. TODO: Fix
+     *
+     * @var array
+     */
+    protected array $replacers;
+
+    /**
      * Set stub path.
      */
     public function from(string $path): static
@@ -58,6 +65,16 @@ class LaravelStub
     }
 
     /**
+     * Set new replace with key and value.
+     */
+    public function replace(string $key, mixed $value): static
+    {
+        $this->replacers[$key] = $value;
+
+        return $this;
+    }
+
+    /**
      * Generate stub file.
      */
     public function generate(): bool
@@ -73,6 +90,10 @@ class LaravelStub
         }
 
         // Replace variables
+        $content = File::get($this->from);
+        foreach ($this->replacers as $search => $value) {
+            str_replace("{{ $search }}", $value, $content);
+        }
 
         // Move file
         $path = "{$this->to}/{$this->name}";
@@ -80,7 +101,7 @@ class LaravelStub
         File::move($this->from, $path);
 
         // Put content and write on file
-        File::put($path, '');
+        File::put($path, $content);
 
         return true;
     }

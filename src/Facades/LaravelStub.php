@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static from(string $path): static
  * @method static to(string $to): static
  * @method static name(string $name): static
+ * @method static replace(string $key, mixed $value): static
  * @method static generate(): bool
  *
  * @see \Binafy\LaravelStub\LaravelStub
