@@ -12,10 +12,11 @@ test('generate stub successfully with all options', function () {
             'NAMESPACE' => 'App\Models'
         ])
         ->replace('TRAIT', 'HasFactory')
-        ->name('new-test.stub')
+        ->name('new-test')
+        ->ext('php')
         ->generate();
 
     \PHPUnit\Framework\assertTrue($generate);
-    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/new-test.stub');
+    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/new-test.php');
     \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/test.stub');
 });

@@ -133,7 +133,7 @@ class LaravelStub
 
         // Add extension
         if (! is_null($this->ext)) {
-            $path .= $this->ext;
+            $path .= ".$this->ext";
         }
 
         // Move file
