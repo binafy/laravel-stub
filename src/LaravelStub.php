@@ -68,6 +68,9 @@ class LaravelStub
         }
 
         // Check destination path is valid
+        if (! File::isDirectory($this->to)) {
+            throw new \RuntimeException('The give folder path is not valid.');
+        }
 
         // Replace variables
 
