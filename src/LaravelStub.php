@@ -101,8 +101,10 @@ class LaravelStub
             throw new \RuntimeException('The give folder path is not valid.');
         }
 
-        // Replace variables
+        // Get file content
         $content = File::get($this->from);
+
+        // Replace variables
         foreach ($this->replaces as $search => $value) {
             $content = str_replace("{{ $search }}", $value, $content);
         }

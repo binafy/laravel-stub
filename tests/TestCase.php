@@ -15,7 +15,17 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        File::put(__DIR__ . '/Feature/test.stub', '');
+        File::put(__DIR__ . '/Feature/test.stub', <<<EOL
+<?php
+
+namespace {{ NAMESPACE }};
+
+class {{ CLASS }}
+{
+    use Illuminate\Database\Eloquent\Factories\{{ TRAIT }};
+}
+EOL
+);
     }
 
     /**

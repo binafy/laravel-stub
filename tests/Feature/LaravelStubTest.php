@@ -7,6 +7,11 @@ test('generate stub successfully with all options', function () {
 
     $generate = LaravelStub::from($stub)
         ->to(__DIR__ . '/../App')
+        ->replaces([
+            'CLASS' => 'Milwad',
+            'NAMESPACE' => 'App\Models'
+        ])
+        ->replace('TRAIT', 'HasFactory')
         ->name('new-test.stub')
         ->generate();
 
