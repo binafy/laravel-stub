@@ -2,6 +2,7 @@
 
 namespace Binafy\LaravelStub;
 
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
 
@@ -104,6 +105,13 @@ class LaravelStub
         return $this;
     }
 
+    /**
+     * Download the stub file.
+     */
+    public function download(): mixed
+    {
+        return Response::download($this->to);
+    }
 
     /**
      * Generate stub file.
@@ -129,12 +137,7 @@ class LaravelStub
         }
 
         // Get correct path
-        $path = "{$this->to}/{$this->name}";
-
-        // Add extension
-        if (! is_null($this->ext)) {
-            $path .= ".$this->ext";
-        }
+        $path = $this->getPath();
 
         // Move file
         File::move($this->from, $path);
@@ -143,5 +146,20 @@ class LaravelStub
         File::put($path, $content);
 
         return true;
+    }
+
+    /**
+     * Get final path.
+     */
+    private function getPath(): string
+    {
+        $path = "{$this->to}/{$this->name}";
+
+        // Add extension
+        if (! is_null($this->ext)) {
+            $path .= ".$this->ext";
+        }
+
+        return $path;
     }
 }

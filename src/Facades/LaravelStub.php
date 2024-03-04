@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static ext(string $ext): static
  * @method static replace(string $key, mixed $value): static
  * @method static replaces(array $replaces): static
+ * @method static download(): mixed
  * @method static generate(): bool
  *
  * @see \Binafy\LaravelStub\LaravelStub
