@@ -63,6 +63,9 @@ class LaravelStub
     public function generate(): bool
     {
         // Check path is valid
+        if (! File::exists($this->from)) {
+            throw new \RuntimeException('The stub file is not exists, please enter a valid path.');
+        }
 
         // Check destination path is valid
 
