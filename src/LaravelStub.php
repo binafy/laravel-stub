@@ -3,6 +3,7 @@
 namespace Binafy\LaravelStub;
 
 use Illuminate\Support\Facades\File;
+use RuntimeException;
 
 class LaravelStub
 {
@@ -26,6 +27,13 @@ class LaravelStub
      * @var string
      */
     protected string $name;
+
+    /**
+     * The stub extension.
+     *
+     * @var string|null
+     */
+    protected string|null $ext;
 
     /**
      * Array of search and value. TODO: Fix
@@ -65,6 +73,16 @@ class LaravelStub
     }
 
     /**
+     * Set stub extension.
+     */
+    public function ext(string $ext): static
+    {
+        $this->ext = $ext;
+
+        return $this;
+    }
+
+    /**
      * Set new replace with key and value.
      */
     public function replace(string $key, mixed $value): static
@@ -86,6 +104,7 @@ class LaravelStub
         return $this;
     }
 
+
     /**
      * Generate stub file.
      */
@@ -93,12 +112,12 @@ class LaravelStub
     {
         // Check path is valid
         if (! File::exists($this->from)) {
-            throw new \RuntimeException('The stub file is not exists, please enter a valid path.');
+            throw new RuntimeException('The stub file is not exists, please enter a valid path.');
         }
 
         // Check destination path is valid
         if (! File::isDirectory($this->to)) {
-            throw new \RuntimeException('The give folder path is not valid.');
+            throw new RuntimeException('The give folder path is not valid.');
         }
 
         // Get file content
@@ -109,9 +128,15 @@ class LaravelStub
             $content = str_replace("{{ $search }}", $value, $content);
         }
 
-        // Move file
+        // Get correct path
         $path = "{$this->to}/{$this->name}";
 
+        // Add extension
+        if (! is_null($this->ext)) {
+            $path .= $this->ext;
+        }
+
+        // Move file
         File::move($this->from, $path);
 
         // Put content and write on file
