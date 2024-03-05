@@ -20,3 +20,14 @@ test('generate stub successfully with all options', function () {
     \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/new-test.php');
     \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/test.stub');
 });
+
+test('throw exception when stub path is invalid', function () {
+    $generate = LaravelStub::from('test.stub')
+        ->to(__DIR__ . '/../App')
+        ->name('new-test')
+        ->ext('php')
+        ->generate();
+
+    \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/new-test.php');
+    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
+})->expectExceptionMessage('The stub file is not exists, please enter a valid path.');
