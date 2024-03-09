@@ -80,6 +80,16 @@ First thing, you need to use `from` method to give the stub path:
 LaravelStub::from(__DIR__ . 'model.stub');
 ```
 
+<a name="to"></a>
+### `to`
+
+So, you need to determine the destination path of the stub file:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App');
+```
+
 <a name="contributors"></a>
 ## Contributors
 
