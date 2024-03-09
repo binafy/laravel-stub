@@ -52,7 +52,7 @@ Add some code to that, like this:
 ```php
 <?php
 
-namespace {{ NAMESPACE }}
+namespace {{ NAMESPACE }};
 
 class {{ CLASS }}
 {
@@ -177,6 +177,19 @@ LaravelStub::from(__DIR__ . 'model.stub')
 ```
 
 > **_NOTE:_**  Don't use `download` and `generate` method in one chain.
+
+The final file will be like this (`new-model.php`):
+
+```php
+<?php
+
+namespace App;
+
+class Milwad
+{
+    
+}
+```
 
 <a name="contributors"></a>
 ## Contributors
