@@ -57,6 +57,20 @@ class {{ CLASS }}
 }
 ```
 
+<a name="how-using-laravel-stub"></a>
+### How using Laravel Stub
+
+You may to use Laravel Stub, you need to use `LaravelStub` facade:
+
+```php
+namespace Binafy\LaravelStub\Facades\LaravelStub;
+
+LaravelStub::class;
+```
+
+<a name="from"></a>
+### `from`
+
 
 
 <a name="contributors"></a>
