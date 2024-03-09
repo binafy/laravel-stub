@@ -1,6 +1,22 @@
 {
     "name": "binafy/laravel-stub",
     "description": "Generate stub files easy",
+    "keywords": [
+        "binafy",
+        "milwad",
+        "laravel",
+        "framework",
+        "stub",
+        "filesystem",
+        "generate stub",
+        "laravel stub package",
+        "laravel stub",
+        "laravel package",
+        "laravel-monitoring",
+        "laravel-stub",
+        "laravel stub"
+    ],
+    "homepage": "https://github.com/binafy/laravel-stub",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -36,8 +52,20 @@
         }
     ],
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html ./coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Binafy\\LaravelStub\\Providers\\LaravelStubServiceProvider"
+            ]
         }
     }
 }
