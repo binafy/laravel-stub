@@ -11,16 +11,18 @@
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-    - [Configuration](#configuration)
+    - [Create a stub file](#create-a-stub-file)
 - [Contributors](#contributors)
 - [Security](#security)
 - [Changelog](#changelog)
 - [License](#license)
-- 
+
+<a name="introduction"></a>
 ## Introduction
 
 The Laravel-Stub package enhances the development workflow in Laravel by providing a set of customizable stubs. Stubs are templates used to scaffold code snippets for various components like models, controllers, and migrations. With Laravel-Stub, developers can easily tailor these stubs to match their project's coding standards and conventions. This package aims to streamline the code generation process, fostering consistency and efficiency in Laravel projects. Explore the customization options and boost your development speed with Laravel-Stub.
 
+<a name="installation"></a>
 ## Installation
 
 You can install the package with Composer:
@@ -31,8 +33,11 @@ composer require binafy/laravel-stub
 
 You don't need to publish anything.
 
+<a name="usage"></a>
 ## Usage
 
+<a name="create-a-stub-file"></a>
+### Create a stub file
 First of all, create a stub file call `model.stub`:
 
 ```bash
@@ -51,6 +56,8 @@ class {{ CLASS }}
     
 }
 ```
+
+
 
 <a name="contributors"></a>
 ## Contributors
