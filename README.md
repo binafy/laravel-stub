@@ -176,7 +176,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->generate();
 ```
 
-
+> **_NOTE:_**  Don't use `download` and `generate` method in one chain.
 
 <a name="contributors"></a>
 ## Contributors
