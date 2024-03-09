@@ -126,6 +126,22 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->replace('NAMESPACE', 'App');
 ```
 
+<a name="replaces"></a>
+### `replaces`
+
+The `replaces` method take an array. If you want to replace multi variables you can use this method:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php')
+    ->replaces([
+        'NAMESPACE' => 'App',
+        'CLASS' => 'Milwad'
+    ]);
+```
+
 <a name="contributors"></a>
 ## Contributors
 
