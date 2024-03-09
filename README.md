@@ -113,6 +113,19 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->ext('php');
 ```
 
+<a name="replace"></a>
+### `replace`
+
+The `replace` method take two params, first one is the key (variable) and second one is value. The value will replace with variable:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php')
+    ->replace('NAMESPACE', 'App');
+```
+
 <a name="contributors"></a>
 ## Contributors
 
