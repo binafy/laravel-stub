@@ -22,5 +22,24 @@ composer require binafy/laravel-stub
 
 You don't need to publish anything.
 
+## Usage
 
+First of all, create a stub file call `model.stub`:
+
+```bash
+touch model.stub
+```
+
+Add some code to that, like this:
+
+```php
+<?php
+
+namespace {{ NAMESPACE }}
+
+class {{ CLASS }}
+{
+    
+}
+```
 
