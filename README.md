@@ -159,6 +159,25 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->download(); // Return download response
 ```
 
+<a name="generate"></a>
+### `generate`
+
+The important method is `generate`. For generate the stub file at the end you need to use `generate` method to generate stub file:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php')
+    ->replaces([
+        'NAMESPACE' => 'App',
+        'CLASS' => 'Milwad'
+    ])
+    ->generate();
+```
+
+
+
 <a name="contributors"></a>
 ## Contributors
 
