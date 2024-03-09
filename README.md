@@ -101,6 +101,18 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->name('new-model');
 ```
 
+<a name="ext"></a>
+### `ext`
+
+You can determine the stub extension:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php');
+```
+
 <a name="contributors"></a>
 ## Contributors
 
