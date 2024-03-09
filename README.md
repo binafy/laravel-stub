@@ -8,6 +8,15 @@
 [![License](http://poser.pugx.org/binafy/laravel-stub/license)](https://packagist.org/packages/binafy/laravel-stub)
 [![Passed Tests](https://github.com/binafy/laravel-stub/actions/workflows/tests.yml/badge.svg)](https://github.com/binafy/laravel-stub/actions/workflows/tests.yml)
 
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Configuration](#configuration)
+- [Contributors](#contributors)
+- [Security](#security)
+- [Changelog](#changelog)
+- [License](#license)
+- 
 ## Introduction
 
 The Laravel-Stub package enhances the development workflow in Laravel by providing a set of customizable stubs. Stubs are templates used to scaffold code snippets for various components like models, controllers, and migrations. With Laravel-Stub, developers can easily tailor these stubs to match their project's coding standards and conventions. This package aims to streamline the code generation process, fostering consistency and efficiency in Laravel projects. Explore the customization options and boost your development speed with Laravel-Stub.
