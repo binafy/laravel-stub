@@ -12,6 +12,9 @@
 - [Installation](#installation)
 - [Usage](#usage)
     - [Create a stub file](#create-a-stub-file)
+    - [How using Laravel Stub](#how-using-laravel-stub)
+    - [`from`](#from)
+    - [`to`](#to)
 - [Contributors](#contributors)
 - [Security](#security)
 - [Changelog](#changelog)
@@ -71,7 +74,11 @@ LaravelStub::class;
 <a name="from"></a>
 ### `from`
 
+First thing, you need to use `from` method to give the stub path:
 
+```php
+LaravelStub::from(__DIR__ . 'model.stub');
+```
 
 <a name="contributors"></a>
 ## Contributors
