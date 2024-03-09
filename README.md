@@ -142,6 +142,23 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ]);
 ```
 
+<a name="download"></a>
+### `download`
+
+If you may to download the stub file, you can use `download` method:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php')
+    ->replaces([
+        'NAMESPACE' => 'App',
+        'CLASS' => 'Milwad'
+    ])
+    ->download(); // Return download response
+```
+
 <a name="contributors"></a>
 ## Contributors
 
