@@ -42,3 +42,22 @@ test('throw exception when destination path is invalid', function () {
     \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/new-test.php');
     \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
 })->expectExceptionMessage('The given folder path is not valid.');
+
+test('download the stub file', function () {
+    $stub = __DIR__ . '/test.stub';
+
+    $downloadInstance = LaravelStub::from($stub)
+        ->to(__DIR__ . '/../App')
+        ->replaces([
+            'CLASS' => 'Milwad',
+            'NAMESPACE' => 'App\Models'
+        ])
+        ->replace('TRAIT', 'HasFactory')
+        ->name('new-test')
+        ->ext('php')
+        ->download();
+
+    expect($downloadInstance)->toBeInstanceOf(\Symfony\Component\HttpFoundation\BinaryFileResponse::class);
+    \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/new-test.php');
+    \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/test.stub');
+});

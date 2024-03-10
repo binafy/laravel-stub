@@ -108,9 +108,11 @@ class LaravelStub
     /**
      * Download the stub file.
      */
-    public function download(): mixed
-    {// TODO: Add tests and complete this
-        return Response::download($this->to);
+    public function download()
+    {
+        $this->generate();
+
+        return Response::download($this->getPath());
     }
 
     /**
