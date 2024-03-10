@@ -13,7 +13,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
     - [Create a stub file](#create-a-stub-file)
-    - [How using Laravel Stub](#how-using-laravel-stub)
+    - [How to use Laravel Stub](#how-using-laravel-stub)
     - [`from`](#from)
     - [`to`](#to)
     - [`name`](#name)
@@ -60,7 +60,7 @@ You don't need to publish anything.
 
 <a name="create-a-stub-file"></a>
 ### Create a stub file
-First of all, create a stub file call `model.stub`:
+First of all, create a stub file called `model.stub`:
 
 ```bash
 touch model.stub
@@ -80,9 +80,9 @@ class {{ CLASS }}
 ```
 
 <a name="how-using-laravel-stub"></a>
-### How using Laravel Stub
+### How to use Laravel Stub
 
-You may to use Laravel Stub, you need to use `LaravelStub` facade:
+You may use Laravel Stub, you need to use the `LaravelStub` facade:
 
 ```php
 namespace Binafy\LaravelStub\Facades\LaravelStub;
@@ -93,7 +93,7 @@ LaravelStub::class;
 <a name="from"></a>
 ### `from`
 
-First thing, you need to use `from` method to give the stub path:
+First thing, you need to use the `from` method to give the stub path:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub');
@@ -135,7 +135,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
 <a name="replace"></a>
 ### `replace`
 
-The `replace` method take two params, first one is the key (variable) and second one is value. The value will replace with variable:
+The `replace` method takes two parameters, the first one is the key (variable) and the second one is the value. The value will be replaced with the variable:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub')
@@ -148,7 +148,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
 <a name="replaces"></a>
 ### `replaces`
 
-The `replaces` method take an array. If you want to replace multi variables you can use this method:
+The `replaces` method takes an array. If you want to replace multiple variables you can use this method:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub')
@@ -164,7 +164,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
 <a name="download"></a>
 ### `download`
 
-If you may to download the stub file, you can use `download` method:
+If you want to download the stub file, you can use the `download` method:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub')
@@ -181,7 +181,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
 <a name="generate"></a>
 ### `generate`
 
-The important method is `generate`. For generate the stub file at the end you need to use `generate` method to generate stub file:
+The important method is `generate`. To generate the stub file at the end you need to use the `generate` method to generate stub file:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub')
@@ -195,7 +195,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->generate();
 ```
 
-> **_NOTE:_**  Don't use `download` and `generate` method in one chain.
+> **_NOTE:_**  Don't use the `download` and `generate` methods in one chain.
 
 The final file will be like this (`new-model.php`):
 
