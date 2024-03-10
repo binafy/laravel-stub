@@ -120,12 +120,12 @@ class LaravelStub
     {
         // Check path is valid
         if (! File::exists($this->from)) {
-            throw new RuntimeException('The stub file is not exists, please enter a valid path.');
+            throw new RuntimeException('The stub file does not exist, please enter a valid path.');
         }
 
         // Check destination path is valid
         if (! File::isDirectory($this->to)) {
-            throw new RuntimeException('The give folder path is not valid.');
+            throw new RuntimeException('The given folder path is not valid.');
         }
 
         // Get file content
