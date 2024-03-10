@@ -30,7 +30,7 @@ test('throw exception when stub path is invalid', function () {
 
     \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/new-test.php');
     \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
-})->expectExceptionMessage('The stub file is not exists, please enter a valid path.');
+})->expectExceptionMessage('The stub file does not exist, please enter a valid path.');
 
 test('throw exception when destination path is invalid', function () {
     $generate = LaravelStub::from(__DIR__ . '/test.stub')
@@ -41,4 +41,4 @@ test('throw exception when destination path is invalid', function () {
 
     \PHPUnit\Framework\assertFileDoesNotExist(__DIR__ . '/../App/new-test.php');
     \PHPUnit\Framework\assertFileExists(__DIR__ . '/../App/test.stub');
-})->expectExceptionMessage('The give folder path is not valid.');
+})->expectExceptionMessage('The given folder path is not valid.');
