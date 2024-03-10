@@ -23,8 +23,8 @@
         "laravel/framework": "^9.0|^10.0|^11.0"
     },
     "require-dev": {
-        "pestphp/pest-plugin-laravel": "2.x",
-        "orchestra/testbench": "8.x|9.x"
+        "pestphp/pest-plugin-laravel": "2.*",
+        "orchestra/testbench": "8.*|9.*"
     },
     "autoload": {
         "psr-4": {
