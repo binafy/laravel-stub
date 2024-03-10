@@ -37,7 +37,7 @@ class LaravelStub
     protected string|null $ext;
 
     /**
-     * Array of search and value. TODO: Fix
+     * The list of replaces.
      *
      * @var array
      */
