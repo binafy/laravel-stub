@@ -10,9 +10,7 @@
         "filesystem",
         "generate stub",
         "laravel stub package",
-        "laravel stub",
         "laravel package",
-        "laravel-monitoring",
         "laravel-stub",
         "laravel stub"
     ],
@@ -22,11 +20,11 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0",
-        "laravel/framework": "^9.0|^10.0"
+        "laravel/framework": "^9.0|^10.0|^11.0"
     },
     "require-dev": {
-        "pestphp/pest-plugin-laravel": "2.x-dev",
-        "orchestra/testbench": "8.x-dev"
+        "pestphp/pest-plugin-laravel": "2.x",
+        "orchestra/testbench": "8.x|9.x"
     },
     "autoload": {
         "psr-4": {
