@@ -40,9 +40,9 @@ The Laravel-Stub package enhances the development workflow in Laravel by providi
 - ```Laravel >= 9.0```
 
 
-| Version/Laravel | L9                 | L10                |
-|-----------------|--------------------|--------------------|
-| 1.0             | :white_check_mark: | :white_check_mark: |
+| Version/Laravel | L9                 | L10                | L11                |
+|-----------------|--------------------|--------------------|--------------------|
+| 1.0             | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 <a name="installation"></a>
 ## Installation
