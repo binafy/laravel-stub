@@ -19,7 +19,7 @@
     "homepage": "https://github.com/binafy/laravel-stub",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^8.0",
         "laravel/framework": "^9.0|^10.0|^11.0"
