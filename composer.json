@@ -1,22 +1,71 @@
 {
     "name": "binafy/laravel-stub",
     "description": "Generate stub files easy",
+    "keywords": [
+        "binafy",
+        "milwad",
+        "laravel",
+        "framework",
+        "stub",
+        "filesystem",
+        "generate stub",
+        "laravel stub package",
+        "laravel package",
+        "laravel-stub",
+        "laravel stub",
+        "laravel stub package",
+        "laravel stub binafy"
+    ],
+    "homepage": "https://github.com/binafy/laravel-stub",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "stable",
     "require": {
         "php": "^8.0",
-        "laravel/framework": "^9.0|^10.0"
+        "laravel/framework": "^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "pestphp/pest-plugin-laravel": "1.*|2.*",
+        "orchestra/testbench": "8.*|9.*"
     },
     "autoload": {
         "psr-4": {
             "Binafy\\LaravelStub\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
-            "name": "miladev-ent",
-            "email": "98118400+milwad-dev@users.noreply.github.com"
+            "name": "milwad-dev",
+            "email": "milwad.dev@gmail.com",
+            "role": "author",
+            "homepage": "https://github.com/milwad-dev"
+        },
+        {
+            "name": "binafy",
+            "role": "owner",
+            "homepage": "https://github.com/binafy"
         }
     ],
-    "minimum-stability": "dev"
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html ./coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Binafy\\LaravelStub\\Providers\\LaravelStubServiceProvider"
+            ]
+        }
+    }
 }

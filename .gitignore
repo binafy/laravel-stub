@@ -3,3 +3,5 @@ composer.lock
 .idea
 .phpunit.result.cache
 coverage
+tests/App/new-test.php
+tests/Feature/test.stub
