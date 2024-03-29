@@ -12,7 +12,9 @@
         "laravel stub package",
         "laravel package",
         "laravel-stub",
-        "laravel stub"
+        "laravel stub",
+        "laravel stub package",
+        "laravel stub binafy"
     ],
     "homepage": "https://github.com/binafy/laravel-stub",
     "type": "library",
