@@ -85,7 +85,7 @@ class {{ CLASS }}
 You may use Laravel Stub, you need to use the `LaravelStub` facade:
 
 ```php
-namespace Binafy\LaravelStub\Facades\LaravelStub;
+use Binafy\LaravelStub\Facades\LaravelStub;
 
 LaravelStub::class;
 ```
