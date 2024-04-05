@@ -44,6 +44,13 @@ class LaravelStub
     protected array $replaces;
 
     /**
+     * The stub file move or not.
+     *
+     * @var bool
+     */
+    protected bool $moveStub = false;
+
+    /**
      * Set stub path.
      */
     public function from(string $path): static
@@ -106,6 +113,16 @@ class LaravelStub
     }
 
     /**
+     * Set stub file move without any copy.
+     */
+    public function moveStub(): static
+    {
+        $this->moveStub = true;
+
+        return $this;
+    }
+
+    /**
      * Download the stub file.
      */
     public function download()
@@ -141,8 +158,11 @@ class LaravelStub
         // Get correct path
         $path = $this->getPath();
 
-        // Move file
-        File::move($this->from, $path);
+        if ($this->moveStub) {
+            File::move($this->from, $path); // Move the file
+        } else {
+            File::copy($this->from, $path); // Copy the file
+        }
 
         // Put content and write on file
         File::put($path, $content);
