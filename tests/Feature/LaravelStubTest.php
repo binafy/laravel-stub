@@ -18,11 +18,31 @@ test('generate stub successfully with all options', function () {
         ->replace('TRAIT', 'HasFactory')
         ->name('new-test')
         ->ext('php')
+        ->moveStub()
         ->generate();
 
     assertTrue($generate);
     assertFileExists(__DIR__ . '/../App/new-test.php');
     assertFileDoesNotExist(__DIR__ . '/../App/test.stub');
+});
+
+test('generate stub successfully with all options without any moving', function () {
+    $stub = __DIR__ . '/test.stub';
+
+    $generate = LaravelStub::from($stub)
+        ->to(__DIR__ . '/../App')
+        ->replaces([
+            'CLASS' => 'Milwad',
+            'NAMESPACE' => 'App\Models'
+        ])
+        ->replace('TRAIT', 'HasFactory')
+        ->name('new-test')
+        ->ext('php')
+        ->generate();
+
+    assertTrue($generate);
+    assertFileExists(__DIR__ . '/../App/new-test.php');
+    assertFileExists(__DIR__ . '/../Feature/test.stub');
 });
 
 test('throw exception when stub path is invalid', function () {
