@@ -20,6 +20,7 @@
     - [`ext`](#ext)
     - [`replace`](#replace)
     - [`replaces`](#replaces)
+    - [`moveStub`](#move-stub)
     - [`download`](#download)
     - [`generate`](#generate)
 - [Contributors](#contributors)
@@ -160,6 +161,25 @@ LaravelStub::from(__DIR__ . 'model.stub')
         'CLASS' => 'Milwad'
     ]);
 ```
+
+<a name="move-stub"></a>
+### `moveStub`
+
+By default, `Laravel Stub` create a copy from your stub file and move it to destination path.If you may to move the current stub file, you can use `moveStub` method:
+
+```php
+LaravelStub::from(__DIR__ . 'model.stub')
+    ->to(__DIR__ . '/App')
+    ->name('new-model')
+    ->ext('php')
+    ->replaces([
+        'NAMESPACE' => 'App',
+        'CLASS' => 'Milwad'
+    ])
+    ->moveStub();
+```
+
+After run this code, the `model.stub` didn't exists.
 
 <a name="download"></a>
 ### `download`
