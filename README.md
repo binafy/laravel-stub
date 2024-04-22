@@ -165,7 +165,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
 <a name="move-stub"></a>
 ### `moveStub`
 
-By default, `Laravel Stub` create a copy from your stub file and move it to destination path.If you may to move the current stub file, you can use `moveStub` method:
+By default, `Laravel Stub` creates a copy from your stub file and moves it to the destination path. If you want to move the current stub file, you can use the `moveStub` method:
 
 ```php
 LaravelStub::from(__DIR__ . 'model.stub')
@@ -179,7 +179,7 @@ LaravelStub::from(__DIR__ . 'model.stub')
     ->moveStub();
 ```
 
-After run this code, the `model.stub` didn't exists.
+After running this code, the `model.stub` didn't exist.
 
 <a name="download"></a>
 ### `download`
