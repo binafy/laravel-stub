@@ -2,6 +2,7 @@ vendor
 composer.lock
 .idea
 .phpunit.result.cache
+.phpunit.xml
 coverage
 tests/App/new-test.php
 tests/Feature/test.stub
