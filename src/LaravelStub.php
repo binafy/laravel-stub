@@ -41,7 +41,7 @@ class LaravelStub
      *
      * @var array
      */
-    protected array $replaces;
+    protected array $replaces = [];
 
     /**
      * The stub file move or not.
