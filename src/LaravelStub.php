@@ -134,7 +134,6 @@ class LaravelStub
      * Set conditions.
      *
      * @param array<string, bool|mixed|Closure> $conditions
-     * @return static
      */
     public function conditions(array $conditions): static
     {
@@ -214,26 +213,33 @@ class LaravelStub
         }
 
         // Process conditions
-        foreach ($this->conditions as $condition => $value) {
-            if ($value instanceof Closure) {
-                $value = $value();
+        if (count($this->conditions) !== 0) {
+            foreach ($this->conditions as $condition => $value) {
+                if ($value instanceof Closure) {
+                    $value = $value();
+                }
+
+                if ($value) {
+                    // Replace placeholders for conditions that are true
+                    $content = preg_replace(
+                        "/^[ \t]*{{ if $condition }}\s*\n(.*?)(?=^[ \t]*{{ endif }}\s*\n)/ms",
+                        "$1",
+                        $content
+                    );
+                } else {
+                    // Remove the entire block for conditions that are false
+                    $content = preg_replace(
+                        "/^[ \t]*{{ if $condition }}\s*\n.*?^[ \t]*{{ endif }}\s*\n/ms",
+                        '',
+                        $content
+                    );
+                }
             }
 
-            if ($value) {
-                // Remove condition placeholders along with any leading whitespace and newlines
-                $content = preg_replace("/^[ \t]*{{ if $condition }}\s*\n|^[ \t]*{{ endif }}\s*\n/m", '', $content);
-                continue;
-            }
-
-            // Remove the entire block including any leading whitespace and newlines
-            $content = preg_replace("/^[ \t]*{{ if $condition }}\s*\n.*?^[ \t]*{{ endif }}\s*\n/ms", '', $content);
+            // Finally, clean up any remaining conditional tags and extra newlines
+            $content = preg_replace("/^[ \t]*{{ if .*? }}\s*\n|^[ \t]*{{ endif }}\s*\n/m", "\n", $content);
+            $content = preg_replace("/^[ \t]*\n/m", "\n", $content);
         }
-
-        // Remove any remaining conditional tags and their lines
-        $content = preg_replace("/^[ \t]*{{ if .*? }}\s*\n|^[ \t]*{{ endif .*? }}\s*\n/m", '', $content);
-
-        // Remove any remaining empty lines
-        $content = preg_replace("/^[ \t]*\n/m", '', $content);
 
         // Get correct path
         $path = $this->getPath();
