@@ -3,6 +3,7 @@
 use Binafy\LaravelStub\Facades\LaravelStub;
 use Illuminate\Support\Facades\File;
 
+use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertFileDoesNotExist;
 use function PHPUnit\Framework\assertFileExists;
 use function PHPUnit\Framework\assertTrue;
@@ -105,14 +106,17 @@ test('generate stub successfully with without any replaces', function () {
 test('generate stub successfully when all conditions are met', function () {
     $stub = __DIR__ . '/test.stub';
 
-    $testCondition = true;
-
     $generate = LaravelStub::from($stub)
         ->to(__DIR__ . '/../App')
+        ->replaces([
+            'CLASS' => 'Milwad',
+            'NAMESPACE' => 'App\Models'
+        ])
+        ->replace('TRAIT', 'HasFactory')
         ->conditions([
             'CONDITION_ONE' => true,
-            'CONDITION_TWO' => $testCondition,
-            'CONDITION_THREE' => fn() => true,
+            'CONDITION_TWO' => true,
+            'CONDITION_THREE' => fn () => false,
         ])
         ->name('conditional-test')
         ->ext('php')
@@ -122,9 +126,13 @@ test('generate stub successfully when all conditions are met', function () {
     assertFileExists(__DIR__ . '/../App/conditional-test.php');
 
     $content = File::get(__DIR__ . '/../App/conditional-test.php');
-    expect($content)->toContain('public function handle(): void');
-    expect($content)->toContain('public function users(): void');
-    expect($content)->toContain('public function roles(): void');
+    expect($content)
+        ->toContain('public function handle(): void')
+        ->and($content)
+        ->toContain('public function users(): void')
+        ->and($content)
+        ->not
+        ->toContain('public function roles(): void');
 });
 
 test('generate stub successfully when conditions are not met', function () {
@@ -224,7 +232,7 @@ test('generate stub unsuccessfully with `generateIf` method', function () {
         ->ext('php')
         ->generateIf(false);
 
-    \PHPUnit\Framework\assertFalse($generate);
+    assertFalse($generate);
 });
 
 test('generate stub successfully with `generateUnless` method', function () {
@@ -259,5 +267,5 @@ test('generate stub unsuccessfully with `generateUnless` method', function () {
         ->ext('php')
         ->generateUnless(true);
 
-    \PHPUnit\Framework\assertFalse($generate);
+    assertFalse($generate);
 });
