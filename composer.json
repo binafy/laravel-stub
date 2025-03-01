@@ -14,7 +14,8 @@
         "laravel-stub",
         "laravel stub",
         "laravel stub package",
-        "laravel stub binafy"
+        "laravel stub binafy",
+        "laravel stub generator"
     ],
     "homepage": "https://github.com/binafy/laravel-stub",
     "type": "library",
@@ -25,8 +26,8 @@
         "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
     },
     "require-dev": {
-        "pestphp/pest-plugin-laravel": "1.*|2.*",
-        "orchestra/testbench": "8.*|9.*"
+        "pestphp/pest-plugin-laravel": "1.*|2.*|3.*",
+        "orchestra/testbench": "8.*|9.*|10.*"
     },
     "autoload": {
         "psr-4": {
@@ -40,7 +41,7 @@
     },
     "authors": [
         {
-            "name": "milwad-dev",
+            "name": "Milwad Khosravi",
             "email": "milwad.dev@gmail.com",
             "role": "author",
             "homepage": "https://github.com/milwad-dev"
